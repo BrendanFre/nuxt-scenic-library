@@ -7,32 +7,28 @@ Find and replace all on all files (CMD+SHIFT+F):
 - Description: My new Nuxt module
 -->
 
-# My Module
+<h1 align="center">Nuxt - Scenic - Library</h1>
+<p align="center">
+<img src="docs/images/logo.webp" width="100px"/>
+</p>
+<p align="center">
+<img alt="NPM Version" src="https://img.shields.io/npm/v/nuxt-scenic-library">
+<img alt="Static Badge" src="https://img.shields.io/badge/NuxtJs-black?style=flat&logo=nuxtdotjs&logoSize=auto">
+<img alt="NPM License" src="https://img.shields.io/npm/l/nuxt-scenic-library">
+</p>
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][license-href]
-[![Nuxt][nuxt-src]][nuxt-href]
-
-My new Nuxt module for doing amazing things.
-
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
-
+A simple library that contains customisable components to be used with the NuxtJS framework.
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- Main Header is a responsive header that can adjust to the size of the user's screen.
 
 ## Quick Setup
 
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxi module add my-module
+npx nuxi module add nuxt-scenic-library
 ```
 
 That's it! You can now use My Module in your Nuxt app ✨
