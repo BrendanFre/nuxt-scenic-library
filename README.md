@@ -28,53 +28,44 @@ A simple library that contains customisable components to be used with the NuxtJ
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxi module add nuxt-scenic-library
+npm install nuxt-scenic-library # or use your favourite package manager
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+Next add the module to your nuxt.config.ts/js file:
+
+```typescript
+export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: true },
+  modules: ['nuxt-scenic-library']
+})
+```
+
+## Usage
+
+### Reactive Header
+
+TO use the reactive header, in a Vue component/page add the following:
+
+```typescript
+    <s-MainHeader
+      site-logo="/logo.webp" // Or use site-name if no logo.
+      font-color="text-sky-900"
+      :page-links="[{linkName: 'Home', linkAddress: '/' }]"
+    />
+```
+This will display the following header:
+
+<img src="docs/images/header.png" />
+
+font-color needs to be in either the Tailwind text format: text-blue-400, or the hexadecimal value.
+
+site-logo needs to be stored in the Public folder as the component uses NuxtImg to handle images.
+
+background-color needs to be in either Tailwing bg format:
+bg-blue-200
+Or a hexadecimal format.
 
 
 ## Contribution
 
-<details>
-  <summary>Local development</summary>
-  
-  ```bash
-  # Install dependencies
-  npm install
-  
-  # Generate type stubs
-  npm run dev:prepare
-  
-  # Develop with the playground
-  npm run dev
-  
-  # Build the playground
-  npm run dev:build
-  
-  # Run ESLint
-  npm run lint
-  
-  # Run Vitest
-  npm run test
-  npm run test:watch
-  
-  # Release new version
-  npm run release
-  ```
-
-</details>
-
-
-<!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-version-href]: https://npmjs.com/package/my-module
-
-[npm-downloads-src]: https://img.shields.io/npm/dm/my-module.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-downloads-href]: https://npmjs.com/package/my-module
-
-[license-src]: https://img.shields.io/npm/l/my-module.svg?style=flat&colorA=020420&colorB=00DC82
-[license-href]: https://npmjs.com/package/my-module
-
-[nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
-[nuxt-href]: https://nuxt.com
