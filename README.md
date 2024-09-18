@@ -71,7 +71,14 @@ const links = [
   }
 ]
 ```
+### Simple Cards
 
+To use the Simple Card, in your Vue template input:
+```typescript
+<s-SimpleCard title="Sample Card">Hello</s-SimpleCard>
+```
+
+Replace title with the title of the card. There is also a coverImage prop which is used to specify the location of an image for the card. By default the card will display a placeholder.
 
 ## Issues
 

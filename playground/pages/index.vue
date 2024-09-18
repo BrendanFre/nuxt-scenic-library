@@ -10,5 +10,6 @@ const route = useRoute()
       href="https://nuxt.com/docs/getting-started/routing"
       target="_blank"
     >Learn more about Nuxt Routing</a>
+    <s-SimpleCard title="Sample Card">Hello</s-SimpleCard>
   </div>
 </template>

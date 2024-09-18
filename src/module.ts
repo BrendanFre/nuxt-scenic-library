@@ -1,4 +1,6 @@
+import { copyFileSync, mkdirSync } from 'node:fs'
 import { defineNuxtModule, createResolver, addComponentsDir, installModule } from '@nuxt/kit'
+import type { Nuxt } from '@nuxt/schema'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -18,6 +20,11 @@ export default defineNuxtModule<ModuleOptions>({
   },
   async setup(_options, _nuxt) {
     const { resolve } = createResolver(import.meta.url)
+
+    // addPlugin({
+    //   src: resolve('./runtime/plugin'),
+    //   mode: 'server' })
+    placeHolderToPublic(resolve, _nuxt)
     await installModule('@nuxt/icon', {
       serverBundle: {
         mode: 'local',
@@ -25,7 +32,13 @@ export default defineNuxtModule<ModuleOptions>({
       },
     },
     )
-    await installModule('@nuxt/image')
+    await installModule('@nuxt/image', {
+      // dir: [resolve('./runtime/components'),
+      //   resolve('./runtime/assets'),
+      // ],
+    },
+    )
+
     await installModule('@nuxtjs/tailwindcss', {
       // module configuration
       exposeConfig: true,
@@ -51,3 +64,10 @@ export default defineNuxtModule<ModuleOptions>({
   },
 },
 )
+function placeHolderToPublic(resolve: (...path: string[]) => string, _nuxt: Nuxt) {
+  const sourceFile = resolve('./runtime/components/placeholder.webp')
+  const destDir = resolve(_nuxt.options.rootDir, 'public')
+  const destFile = resolve(destDir, 'placeholder.webp')
+  mkdirSync(destDir, { recursive: true })
+  copyFileSync(sourceFile, destFile)
+}
