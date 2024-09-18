@@ -1,7 +1,8 @@
 <template>
   <header :class="headerStyle">
     <div
-      id="siteIdentity" class="flex justify-center items-center"
+      id="siteIdentity"
+      class="flex justify-center items-center"
     >
       <span v-if="siteLogo === ''">
         {{ siteName }}
@@ -105,7 +106,7 @@ const { siteName, backgroundColor, fontColor, siteLogo } = defineProps({
   },
 })
 
-const headerStyle = ref(['flex', 'flex-row', 'justify-between', 'items-center', 'w-full', 'px-5', 'py-2', 'top-0', 'left-0', 'fixed', 'mb-2', 'shadow-2xl', backgroundColor, fontColor])
+const headerStyle = ref(['flex', 'flex-row', 'justify-between', 'items-center', 'w-full', 'px-5', 'py-2', 'static', 'mb-2', 'shadow-2xl', backgroundColor, fontColor])
 const showMobileMenu = 'top-0 left-0 absolute w-screen h-screen flex flex-col justify-center items-center ' + backgroundColor
 </script>
 
