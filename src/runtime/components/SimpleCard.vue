@@ -3,7 +3,7 @@
     class="sm:w-full md:w-1/3 flex flex-col rounded simpleCard shadow-2xl text-2xl m-5 border-1"
   >
     <NuxtImg
-      :src="props.coverImage || '/placeholder.webp'"
+      :src="props.coverImage || 'scenic/placeholder.webp'"
       width="100%"
       placeholder
     />
@@ -26,25 +26,6 @@ const props = defineProps({
     type: String,
   },
 })
-
-const itZooms = (e: Event) => {
-  const target = e.target as HTMLDivElement
-  const startWidth = Number.parseInt(target.style.width.substring(0, -2))
-  const startHeight = Number.parseInt(target.style.height.substring(0, -2))
-  let currentWidth = startWidth
-  let currentHeight = startHeight
-  const frame = () => {
-    if (currentWidth === 2 * startWidth) {
-      clearInterval(counter)
-    } else {
-      target.style.width = currentWidth + 50 + 'px'
-      target.style.height = currentHeight + 50 + 'px'
-      currentWidth = Number.parseInt(target.style.width.substring(0, -2))
-      currentHeight = Number.parseInt(target.style.height.substring(0, -2))
-    }
-  }
-  const counter = setInterval(frame, 5)
-}
 </script>
 
 <style scoped>

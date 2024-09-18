@@ -66,7 +66,7 @@ export default defineNuxtModule<ModuleOptions>({
 )
 function placeHolderToPublic(resolve: (...path: string[]) => string, _nuxt: Nuxt) {
   const sourceFile = resolve('./runtime/components/placeholder.webp')
-  const destDir = resolve(_nuxt.options.rootDir, 'public')
+  const destDir = resolve(_nuxt.options.rootDir, 'public/scenic')
   const destFile = resolve(destDir, 'placeholder.webp')
   mkdirSync(destDir, { recursive: true })
   copyFileSync(sourceFile, destFile)
