@@ -1,12 +1,3 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: my-module
-- Description: My new Nuxt module
--->
-
 <h1 align="center">Nuxt - Scenic - Library</h1>
 <p align="center">
 <img src="docs/images/logo.webp" width="100px"/>
@@ -20,8 +11,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 A simple library that contains customisable components to be used with the NuxtJS framework.
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- Main Header is a responsive header that can adjust to the size of the user's screen.
+- Main Header is a responsive header that can adjust to the size of the user's screen.\
 
 ## Quick Setup
 
@@ -66,6 +56,29 @@ background-color needs to be in either Tailwing bg format:
 bg-blue-200
 Or a hexadecimal format.
 
+page-links needs to be an array with objects that have properties linkName and linkAddress. linkAddress must be relative to the website unless external. I.E.:
+
+```typescript
+const links = [
+  {
+    linkName: 'Home',
+    linkAddress: '/',
+
+  },
+  {
+    linkName: 'About',
+    linkAddress: '/about'
+  }
+]
+```
+
+
+## Issues
+
+If you have any errors or issues please raise an issue here:
+https://github.com/BrendanFre/nuxt-scenic-library/issues
 
 ## Contribution
 
+
+<a href="https://github.com/BrendanFre"><img src="https://avatars.githubusercontent.com/u/80400320?v=4" style="border-radius: 100%" height="64" /></a>
