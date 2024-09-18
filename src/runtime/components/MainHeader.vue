@@ -1,7 +1,7 @@
 <template>
   <header :class="headerStyle">
     <div
-      id="siteIdentity"
+      id="siteIdentity" class="flex justify-center items-center"
     >
       <span v-if="siteLogo === ''">
         {{ siteName }}
@@ -9,7 +9,7 @@
       <NuxtImg
         v-else
         :src="siteLogo"
-        sizes="10vw sm:4vw"
+        sizes="sm:15vw"
         densities="1x 2x"
         alt="Site Logo"
         title="Site Logo"
@@ -105,7 +105,7 @@ const { siteName, backgroundColor, fontColor, siteLogo } = defineProps({
   },
 })
 
-const headerStyle = ref(['flex', 'flex-row', 'justify-between', 'items-center', 'w-full', 'px-5', 'py-2', 'top-0', 'left-0', 'fixed', 'shadow-2xl', backgroundColor, fontColor])
+const headerStyle = ref(['flex', 'flex-row', 'justify-between', 'items-center', 'w-full', 'px-5', 'py-2', 'top-0', 'left-0', 'fixed', 'mb-2', 'shadow-2xl', backgroundColor, fontColor])
 const showMobileMenu = 'top-0 left-0 absolute w-screen h-screen flex flex-col justify-center items-center ' + backgroundColor
 </script>
 

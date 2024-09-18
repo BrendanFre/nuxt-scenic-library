@@ -5,6 +5,9 @@
       font-color="text-sky-900"
       :page-links="links"
     />
+    <s-SimpleCard>
+      Hello
+    </s-SimpleCard>
   </div>
   <NuxtPage />
 </template>
