@@ -1,6 +1,10 @@
 <template>
   <div>
-    <s-MainHeader site-logo="/logo.webp" font-color="text-sky-900" :page-links="links" />
+    <s-MainHeader
+      site-logo="/logo.webp"
+      font-color="text-sky-900"
+      :page-links="links"
+    />
   </div>
   <NuxtPage />
 </template>
