@@ -20,10 +20,6 @@ export default defineNuxtModule<ModuleOptions>({
   },
   async setup(_options, _nuxt) {
     const { resolve } = createResolver(import.meta.url)
-
-    // addPlugin({
-    //   src: resolve('./runtime/plugin'),
-    //   mode: 'server' })
     placeHolderToPublic(resolve, _nuxt)
     await installModule('@nuxt/icon', {
       serverBundle: {
