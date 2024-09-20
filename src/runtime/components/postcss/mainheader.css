@@ -1,15 +1,14 @@
-.menuLink {
-  @media screen and (min-width: 700px) {
+@media screen and (min-width: 700px) {.menuLink {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 8px;
+    gap: 8px
+}
 
-    &a {
+    .menuLinka {
       margin: 0 5px;
     }
   }
-}
 
 .hideIcon {
   display: none;
@@ -17,17 +16,21 @@
 
 .hide {
   display: none;
-  @media screen and (min-width: 700px) {
+}
+
+@media screen and (min-width: 700px) {
+
+.hide {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 8px;
+    gap: 8px
+}
 
-    &a {
+    .hidea {
       margin: 0 5px;
     }
   }
-}
 
 .show {
   display: flex;
@@ -41,17 +44,21 @@
   justify-content: center;
   align-items: center;
   background-color: v-bind(backgroundColor);
-  @media screen and (min-width: 700px) {
+}
+
+@media screen and (min-width: 700px) {
+
+.show {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 8px;
+    gap: 8px
+}
 
-    &a {
+    .showa {
       margin: 0 5px;
     }
   }
-}
 
 .menuLinkShow {
   display: flex;
@@ -70,6 +77,10 @@
   background-color: v-bind(backgroundColor);
 }
 
+::-moz-placeholder {
+  background-color: gray;
+}
+
 ::placeholder {
   background-color: gray;
 }
@@ -78,11 +89,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
-  & img {
+.siteIdentity img {
     height: 48px;
   }
-}
 
 .headerStyle {
   display: flex;
@@ -96,14 +107,14 @@
   background-color: v-bind(backColor);
   margin: 0;
   box-shadow: 10px 5px 5px black;
+}
 
-  @media screen and (min-width: 500px) {
-    .headerStyle {
+@media screen and (min-width: 500px) {
+    .headerStyle .headerStyle {
       height: 100px;
       padding: 40px 5px;
     }
   }
-}
 
 .menu {
   display: flex;

@@ -20,18 +20,17 @@
         format="avif"
       />
     </div>
-    <div
-      id="menu"
-      class="menu"
-    >
+    <div class="menu">
       <icon
         v-if="showMobile"
+        id="menuIcon"
         name="pajamas:hamburger"
         :style="'color:' + fontColor"
         @click="showMenu()"
       />
       <div
-        :class="menuLink"
+        id="menu"
+        class="hide"
         :style="{ backgroundColor: backgroundColor }"
         @click.prevent="showMenu"
       >
@@ -66,15 +65,20 @@ function pageDetect() {
 }
 
 function showMenu() {
-  if (!showMobile.value) {
-    menuLink.value = 'menuLinkShow'
-  }
-  else if (menuLink.value === 'hidden') {
-    menuLink.value = 'showMobileMenu'
-  }
-  else {
-    menuLink.value = 'menuLink'
-  }
+  const menu = document.querySelector('#menu') as HTMLDivElement
+  const menuIcon = document.querySelector('#menuIcon')
+  menu.classList.toggle('hide')
+  menu.classList.toggle('show')
+  menuIcon.classList.toggle('hideIcon')
+  // if (!showMobile.value) {
+  //   menu.classList.toggle('hide')
+  // }
+  // else if (menuLink.value === 'hidden') {
+  //   menuLink.value = 'showMobileMenu'
+  // }
+  // else {
+  //   menuLink.value = 'menuLink'
+  // }
 }
 
 onMounted(() => {
