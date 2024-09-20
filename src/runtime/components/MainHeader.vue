@@ -1,8 +1,11 @@
 <template>
-  <header :class="headerStyle">
+  <header
+    class="headerStyle"
+    :style="{ backgroundColor: backgroundColor }"
+  >
     <div
       id="siteIdentity"
-      class="flex justify-center items-center"
+      class="siteIdentity"
     >
       <span v-if="siteLogo === ''">
         {{ siteName }}
@@ -10,25 +13,25 @@
       <NuxtImg
         v-else
         :src="siteLogo"
-        sizes="sm:15vw"
+        sizes="sm:48px md:98px"
         densities="1x 2x"
         alt="Site Logo"
         title="Site Logo"
         format="avif"
       />
     </div>
-    <div
-      id="menu"
-      class="flex justify-center items-center"
-    >
+    <div class="menu">
       <icon
         v-if="showMobile"
+        id="menuIcon"
         name="pajamas:hamburger"
         :style="'color:' + fontColor"
         @click="showMenu()"
       />
       <div
-        :class="menuLink"
+        id="menu"
+        class="hide"
+        :style="{ backgroundColor: backgroundColor }"
         @click.prevent="showMenu"
       >
         <NuxtLink
@@ -62,15 +65,11 @@ function pageDetect() {
 }
 
 function showMenu() {
-  if (!showMobile.value) {
-    menuLink.value = 'visible flex'
-  }
-  else if (menuLink.value === 'hidden') {
-    menuLink.value = showMobileMenu
-  }
-  else {
-    menuLink.value = 'hidden'
-  }
+  const menu = document.querySelector('#menu') as HTMLDivElement
+  const menuIcon = document.querySelector('#menuIcon') as HTMLLIElement
+  menu.classList.toggle('hide')
+  menu.classList.toggle('show')
+  menuIcon.classList.toggle('hideIcon')
 }
 
 onMounted(() => {
@@ -90,7 +89,7 @@ const { siteName, backgroundColor, fontColor, siteLogo } = defineProps({
   },
   backgroundColor: {
     type: String,
-    default: 'bg-blue-200',
+    default: '#2d94e6',
   },
   fontColor: {
     type: String,
@@ -105,10 +104,4 @@ const { siteName, backgroundColor, fontColor, siteLogo } = defineProps({
     default: () => [],
   },
 })
-
-const headerStyle = ref(['flex', 'flex-row', 'justify-between', 'items-center', 'w-full', 'px-5', 'py-2', 'static', 'mb-2', 'shadow-2xl', backgroundColor, fontColor])
-const showMobileMenu = 'top-0 left-0 absolute w-screen h-screen flex flex-col justify-center items-center ' + backgroundColor
 </script>
-
-<style scoped>
-</style>

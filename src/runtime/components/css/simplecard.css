@@ -1,0 +1,21 @@
+.simpleCard {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 10px gray;
+  border: 1px solid black;
+  margin: 10px;
+  @media screen and (min-width: 700px) {
+    width: 33%;
+  }
+  & p {
+    font-size: responsive 16px 18px;
+    font-range: 420px 1280px;
+  }
+}
+.cardHeader {
+  font-size: responsive 18px 21px;
+  text-align: center;
+  font-range: 420px 1280px;
+}
