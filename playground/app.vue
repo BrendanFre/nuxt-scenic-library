@@ -8,6 +8,7 @@
     <s-SimpleCard>
       Hello
     </s-SimpleCard>
+    <s-SimpleFooter copyright="Brendan" />
   </div>
   <NuxtPage />
 </template>
