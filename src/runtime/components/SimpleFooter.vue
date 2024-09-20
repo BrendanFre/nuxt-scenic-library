@@ -49,9 +49,21 @@ else {
 
 <template>
   <div class="footerContainer">
-    Copyright &copy; {{ yearString }} {{ props.copyright }}
-    <div v-if="props.type==='menu'">
-      Menu Me
+    <p>Copyright &copy; {{ yearString }} {{ props.copyright }}</p>
+    <div
+      v-if="props.type==='menu'"
+      class="footerMenu"
+    >
+      <hr
+        class="separator"
+      >
+      <NuxtLink
+        v-for="item in menuItems"
+        :key="item.linkAddress"
+        :to="item.linkAddress"
+      >
+        {{ item.linkName }}
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -65,14 +77,29 @@ else {
   color: v-bind(color);
   padding: 20px;
   position:absolute;
+  justify-content: center;
+  align-items: center;
   left: 0;
   bottom: 0;
+  text-shadow: 1px 1px gray;
 
   @media screen and (min-width: 700px){
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 10vh;
+  }
+}
+.footerMenu{
+  display: flex;
+  flex-direction: column;
+}
+
+.separator{
+margin: 2px 0;
+
+@media screen and (min-width: 700px){
+display: none
   }
 }
 </style>

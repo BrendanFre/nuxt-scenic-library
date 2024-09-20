@@ -18,6 +18,7 @@ const links = reactive([{
     <s-SimpleFooter
       copyright="Brendan"
       type="menu"
+      :menu-items="[{ linkName: 'Home', linkAddress: '/' }]"
     />
   </div>
 </template>
