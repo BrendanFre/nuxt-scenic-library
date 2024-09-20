@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { MenuObject } from './Types'
 import { ref } from '#imports'
-
+// TODO: Create the secondary menu
 enum FooterType {
   simple,
   menu,
