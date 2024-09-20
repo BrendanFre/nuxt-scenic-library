@@ -66,19 +66,10 @@ function pageDetect() {
 
 function showMenu() {
   const menu = document.querySelector('#menu') as HTMLDivElement
-  const menuIcon = document.querySelector('#menuIcon')
+  const menuIcon = document.querySelector('#menuIcon') as HTMLLIElement
   menu.classList.toggle('hide')
   menu.classList.toggle('show')
   menuIcon.classList.toggle('hideIcon')
-  // if (!showMobile.value) {
-  //   menu.classList.toggle('hide')
-  // }
-  // else if (menuLink.value === 'hidden') {
-  //   menuLink.value = 'showMobileMenu'
-  // }
-  // else {
-  //   menuLink.value = 'menuLink'
-  // }
 }
 
 onMounted(() => {
@@ -113,6 +104,4 @@ const { siteName, backgroundColor, fontColor, siteLogo } = defineProps({
     default: () => [],
   },
 })
-// const headerStyle = ref(['flex', 'flex-row', 'justify-between', 'items-center', 'w-full', 'px-5', 'py-2', 'static', 'mb-2', 'shadow-2xl', backgroundColor, fontColor])
-// const showMobileMenu = 'top-0 left-0 absolute w-screen h-screen flex flex-col justify-center items-center ' + backgroundColor
 </script>
