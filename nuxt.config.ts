@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/icon'],
+  modules: ['@nuxt/icon', 'my-module'],
   postcss: {
     plugins: {
-      'postcss-nested': {},
-      'postcss-custom-media': {},
+      'postcss-responsive-type': {},
+      'autoprefixer': {},
+      'cssnano': {},
     },
   },
 })

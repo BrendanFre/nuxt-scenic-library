@@ -1,5 +1,8 @@
 <template>
-  <header class="headerStyle">
+  <header
+    class="headerStyle"
+    :style="{ backgroundColor: backgroundColor }"
+  >
     <div
       id="siteIdentity"
       class="siteIdentity"
@@ -29,6 +32,7 @@
       />
       <div
         :class="menuLink"
+        :style="{ backgroundColor: backgroundColor }"
         @click.prevent="showMenu"
       >
         <NuxtLink
@@ -63,13 +67,13 @@ function pageDetect() {
 
 function showMenu() {
   if (!showMobile.value) {
-    menuLink.value = 'visible flex'
+    menuLink.value = 'menuLinkShow'
   }
   else if (menuLink.value === 'hidden') {
-    menuLink.value = showMobileMenu
+    menuLink.value = 'showMobileMenu'
   }
   else {
-    menuLink.value = 'hidden'
+    menuLink.value = 'menuLink'
   }
 }
 
@@ -105,45 +109,6 @@ const { siteName, backgroundColor, fontColor, siteLogo } = defineProps({
     default: () => [],
   },
 })
-
-const backColor = ref(backgroundColor)
-
 // const headerStyle = ref(['flex', 'flex-row', 'justify-between', 'items-center', 'w-full', 'px-5', 'py-2', 'static', 'mb-2', 'shadow-2xl', backgroundColor, fontColor])
-const showMobileMenu = 'top-0 left-0 absolute w-screen h-screen flex flex-col justify-center items-center ' + backgroundColor
+// const showMobileMenu = 'top-0 left-0 absolute w-screen h-screen flex flex-col justify-center items-center ' + backgroundColor
 </script>
-
-<style scoped lang="postcss">
-::placeholder{
-  background-color: gray;
-}
-.siteIdentity{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.headerStyle{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  padding: 20px 5px;
-  position: static;
-  background-color: v-bind(backColor);
-  margin: 0;
-  box-shadow:10px 5px 5px black ;
-  @media screen and (min-width: 500px){
-    .headerStyle{
-      height: 100px;
-      padding: 40px 5px;
-    }
-  }
-}
-
-.menu{
-display: flex;
-justify-content: center;
-align-items: center;
-}
-</style>
