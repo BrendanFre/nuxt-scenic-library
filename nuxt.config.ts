@@ -1,4 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@nuxt/icon'],
+  postcss: {
+    plugins: {
+      'postcss-nested': {},
+      'postcss-custom-media': {},
+    },
+  },
 })

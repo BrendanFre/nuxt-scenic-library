@@ -38,6 +38,7 @@ export default defineNuxtModule<ModuleOptions>({
       // ],
     },
     )
+    // _nuxt.options.css.push(resolve('./runtime/style.css'))
 
     await installModule('@nuxtjs/tailwindcss', {
       // module configuration
