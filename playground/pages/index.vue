@@ -13,5 +13,13 @@ const route = useRoute()
     <s-SimpleCard title="Sample Card">
       Hello
     </s-SimpleCard>
+
+    <s-SimpleRating
+      stars="3"
+    />
+    <s-SimpleRating
+      stars="4"
+      hide-number="no"
+    />
   </div>
 </template>

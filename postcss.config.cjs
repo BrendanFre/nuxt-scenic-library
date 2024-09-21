@@ -5,6 +5,7 @@ const config = {
     require('postcss-nested'),
     require('postcss-responsive-font'),
     require('postcss-responsive-type')(),
+    require('cssnano'),
   ],
 }
 
