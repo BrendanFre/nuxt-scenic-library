@@ -32,6 +32,7 @@
   "dependencies": {
     "@nuxt/kit": "^3.13.2",
     "css-mqpacker": "^7.0.0",
+    "cssnano": "^7.0.6",
     "postcss-cli": "^11.0.0",
     "postcss-responsive-font": "^1.0.6",
     "postcss-responsive-type": "^1.0.0"

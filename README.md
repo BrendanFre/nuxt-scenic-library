@@ -80,6 +80,27 @@ To use the Simple Card, in your Vue template input:
 
 Replace title with the title of the card. There is also a coverImage prop which is used to specify the location of an image for the card. By default the card will display a placeholder.
 
+### Simple Rating
+
+To use the SImple Rating, in your Vue tempalte input:
+
+```typescript
+    <s-SimpleRating
+      stars="4"
+      hide-number="no"
+    />
+```
+
+This will display the below:
+
+<img src="docs/images/simplerating.webp" />
+
+Parameters:
+
+stars: How many stars to display, must be a whole number in the form of a string.
+
+hide-number: If set to yes, it will remove the large number from the display. By default it shows the number.
+
 ## Issues
 
 If you have any errors or issues please raise an issue here:
